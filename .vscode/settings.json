@@ -1,0 +1,10 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "flagsUrl": "https://api.optimizely.com/flags/v1",
+      "baseUrl": "https://api.optimizely.com/v2",
+      "token": "Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o",
+      "projectId": 26592390574
+    }
+  }
+}

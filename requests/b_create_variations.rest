@@ -1,0 +1,64 @@
+// -------------------------------------------------------------------------- //
+//                              Create Variations                             //
+// -------------------------------------------------------------------------- //
+
+// ------------------------ On Hide Amounts Variation ----------------------- //
+POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+Content-Type: application/json
+authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+
+{
+  "key": "on_hide_amounts",
+  "name": "On Hide Amounts",
+  "description": "Inventory is shown as available/unavailable, in the color green.",
+  "variables": {
+    "show_amounts": {
+      "value": "false"
+    },
+    "text_color": {
+      "value": "green"
+    }
+  }
+}
+
+###
+
+// ------------------------ On Show Amounts Variation ----------------------- //
+POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+Content-Type: application/json
+authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+
+{
+  "key": "on_show_amounts",
+  "name": "On Show Amounts",
+  "description": "Inventory is shown with amounts, in the color green.",
+  "variables": {
+    "show_amounts": {
+      "value": "true"
+    },
+    "text_color": {
+      "value": "green"
+    }
+  }
+}
+
+###
+
+// ------------------------ On Show Amounts Red Variation ----------------------- //
+POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+Content-Type: application/json
+authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+
+{
+  "key": "on_show_amounts_red",
+  "name": "On Show Amounts Red",
+  "description": "Inventory is shown with amounts, in the color red.",
+  "variables": {
+    "show_amounts": {
+      "value": "true"
+    },
+    "text_color": {
+      "value": "red"
+    }
+  }
+}

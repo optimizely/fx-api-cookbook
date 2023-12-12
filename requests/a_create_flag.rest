@@ -1,0 +1,39 @@
+// -------------------------------------------------------------------------- //
+//                                 Create Flag                                //
+// -------------------------------------------------------------------------- //
+POST {{flagsUrl}}/projects/{{projectId}}/flags
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "key": "inventory_on_pdp",
+  "name": "Inventory on PDP",
+  "description": "Flag to either show or hide inventory on the product detail page.",
+  "variable_definitions": {
+    "show_amounts": {
+      "key": "show_amounts",
+      "type": "boolean",
+      "default_value": "false",
+      "description": "If inventory is shown, this variable controls what is displayed: available/unavailable vs the actual inventory amount."
+    },
+    "text_color": {
+      "key": "text_color",
+      "type": "string",
+      "default_value": "green",
+      "description": "The color of the text displaying the inventory."
+    },
+    "low_stock_threshold": {
+      "key": "low_stock_threshold",
+      "type": "integer",
+      "default_value": "0",
+      "description": "The threshold quantity remaining in order to show a low stock message.  Setting this to 0 results in not displaying the low stock message."
+    },
+    "low_stock_message": {
+      "key": "low_stock_message",
+      "type": "string",
+      "default_value": "Low Stock - Act Quick",
+      "description": "The Low Stock message to display if low_stock_threshold is set to a number greater than 0."
+    }
+  }
+}
+
