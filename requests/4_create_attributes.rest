@@ -1,0 +1,66 @@
+// -------------------------------------------------------------------------- //
+//                             Create attributes.                             //
+// -------------------------------------------------------------------------- //
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "key": "is_logged_in",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "days_since_last_order",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "region_state",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "is_mobile_user",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "is_mobile_app",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "is_qa",
+  "project_id": 26592390574
+}
+###
+
+POST {{baseUrl}}/attributes
+Content-Type: application/json
+Authorization: {{token}}
+{
+  "key": "qa_team",
+  "project_id": 26592390574
+}

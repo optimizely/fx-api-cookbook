@@ -46,7 +46,7 @@ You can find more information on adding environment variables [here](https://git
 
 Now we'll execute some of the most common operations in the lifecycle of an experiment via the Optimizely APIs, including:
 
-1. Create a eature flag and flag variables.
+1. Create a feature flag and flag variables.
 2. Create variations.
 3. Create events.
 4. Create attributes.
@@ -56,4 +56,6 @@ Now we'll execute some of the most common operations in the lifecycle of an expe
 8. Conclude the experiment.
 9. Analyze results.
 
-For each of the sections below, copy and paste the code examples into individual files with a file extension of `.rest`. After installing the REST Client extension, you can send requests by clicking the `Send Request` button at the top of each file.
+Each of the above sections has its own `.rest` file in the `requests` directory of this repo. To execute the requests, open each file in VS Code and click the `Send Request` link above the request.
+
+For more information on how to send requests using the REST Client extension, see [here](https://marketplace.visualstudio.com/items?itemName=humao.rest-client#usage).

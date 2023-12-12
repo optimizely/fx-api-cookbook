@@ -1,6 +1,7 @@
 // -------------------------------------------------------------------------- //
-//                                 Create Flag                                //
+//                  Create a feature flag and flag variables.                 //
 // -------------------------------------------------------------------------- //
+
 POST {{flagsUrl}}/projects/{{projectId}}/flags
 Content-Type: application/json
 Authorization: {{token}}
@@ -36,4 +37,3 @@ Authorization: {{token}}
     }
   }
 }
-

@@ -1,11 +1,11 @@
 // -------------------------------------------------------------------------- //
-//                              Create Variations                             //
+//                             Create variations.                             //
 // -------------------------------------------------------------------------- //
 
 // ------------------------ On Hide Amounts Variation ----------------------- //
-POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+POST {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/variations
 Content-Type: application/json
-authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+Authorization: {{token}}
 
 {
   "key": "on_hide_amounts",
@@ -24,9 +24,9 @@ authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
 ###
 
 // ------------------------ On Show Amounts Variation ----------------------- //
-POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+POST {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/variations
 Content-Type: application/json
-authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+Authorization: {{token}}
 
 {
   "key": "on_show_amounts",
@@ -44,10 +44,10 @@ authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
 
 ###
 
-// ------------------------ On Show Amounts Red Variation ----------------------- //
-POST https://api.optimizely.com/flags/v1/projects/26592390574/flags/inventory_on_pdp/variations
+// ------------------------ On Show Amounts Red Variation ----------------------- 
+POST {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/variations
 Content-Type: application/json
-authorization: Bearer 2:x86N08RL9B1AF80O6FufO859Fwef4VEI9f_p-jWl4i-nIy1--B2o
+Authorization: {{token}}
 
 {
   "key": "on_show_amounts_red",

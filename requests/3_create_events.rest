@@ -1,0 +1,40 @@
+// -------------------------------------------------------------------------- //
+//                               Create events.                               //
+// -------------------------------------------------------------------------- //
+
+// ---------------------------- Add to cart event --------------------------- //
+POST {{baseUrl}}/projects/{{projectId}}/custom_events
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "event_type": "custom",
+  "key": "add_to_cart",
+  "description": "Event used to track users that have added the item to the cart."
+}
+
+###
+
+// ------------------------- Started checkout event ------------------------- //
+POST {{baseUrl}}/projects/{{projectId}}/custom_events
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "event_type": "custom",
+  "key": "started_checkout",
+  "description": "Event used to track users that has started the checkout flow."
+}
+
+###
+
+// ------------------------ Completed checkout event ------------------------ //
+POST {{baseUrl}}/projects/{{projectId}}/custom_events
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "event_type": "custom",
+  "key": "completed_checkout",
+  "description": "Event used to track users that has completed the checkout flow."
+}
