@@ -1,0 +1,21 @@
+// -------------------------------------------------------------------------- //
+//                             Launch experiment.                             //
+// -------------------------------------------------------------------------- //
+
+// ------------------------------- Enable Flag ------------------------------ //
+
+POST https://api.app.optimizely.com/flags/projects/25276451226/flags/inventory_on_pdp/environments/production/ruleset/enabled
+Authorization: {{token}}
+
+
+
+###
+
+// ---------------------------- Launch Experiment --------------------------- //
+
+//TODO: test url
+PATCH {{flagsUrl}}/projects/25276451226/flags/inventory_on_pdp/environments/production/ruleset
+Content-Type: application/json
+Authorization: {{token}}
+
+[{"op":"replace","path":"/rules/stock_message_test/enabled","value":true}]

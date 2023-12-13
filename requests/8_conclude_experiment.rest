@@ -1,0 +1,9 @@
+# ---------------------------------------------------------------------------- #
+#                             Conclude experiment.                             #
+# ---------------------------------------------------------------------------- # 
+
+PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/production/ruleset
+Content-Type: application/json
+Authorization: {{token}}
+
+[{"op":"replace","path":"/rules/stock_message_test/enabled","value":false}]

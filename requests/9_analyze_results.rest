@@ -1,0 +1,37 @@
+// -------------------------------------------------------------------------- //
+//                              Analyze results.                              //
+// -------------------------------------------------------------------------- //
+
+// ----------- Get All Experiments in Project => Get Experiment Key ---------- //
+
+GET {{flagsUrl}}/projects/{{projectId}}/rules?rule_types=a/b,mab&archived=false&environments=production&per_page=100
+Content-Type: application/json
+Authorization: {{token}}
+
+// Grab the relevant experiment key from the response, if you don't already have it (e.g., stock_message_test).
+
+###
+
+// ------------------------- Get Experiment Reports ------------------------- //
+GET {{flagsUrl}}/projects/{{projectId}}/environments/production/reports?sort=key:asc&archived=false
+Content-Type: application/json
+Authorization: {{token}}
+
+// Grab the relevant report key for the experiment of interest (e.g., stock_message_test_W9PHyDfYDiGdoqwuU9ANR4)
+
+###
+
+// -------------------- Get Individual Experiment Report -------------------- //
+GET {{flagsUrl}}/projects/{{projectId}}/environments/production/reports/{yourReportKey}
+Content-Type: application/json
+Authorization: {{token}}
+
+// Grab the relevant experiment results ID from the end of the fetch_results_ui_url key in the response
+
+// ------------------------- Get Experiment Results ------------------------- //
+
+// Add the experiment results from the previous response ID to the URL below.
+
+GET {{baseUrl}}/experiments/{yourExperimentResultsId}/results
+Content-Type: application/json
+Authorization: {{token}}

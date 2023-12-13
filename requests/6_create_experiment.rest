@@ -1,0 +1,69 @@
+// ---------------------------------------------------------------------------- //
+//                              Create experiment.                              //
+// ---------------------------------------------------------------------------- //
+
+// Hypothesis: showing the number of items left in stock on the PDP page will increase add to cart.
+// Goal Metric(s): add to cart rate.
+// Audience(s): Everyone
+// Ramp Percentage: 100%
+// Metrics: add_to_cart
+// Distribution Mode: manual
+// Variations: off (33%), On Show Amounts (33%), On Show Amounts Red (33%)
+
+//TODO: Fix url
+PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/production/ruleset
+Content-Type: application/json
+Authorization: {{token}}
+
+[
+    {
+        "op": "add",
+        "path": "/rules/stock_message_test",
+        "value": {
+            "key": "stock_message_test",
+            "name": "Stock Message Test",
+            "type": "a/b",
+            "distribution_mode": "manual",
+            "percentage_included": 10000,
+            "metrics": [
+                {
+                    "aggregator": "unique",
+                    "display_title": "add_to_cart",
+                    "event_id": 25259131694,
+                    "event_type": "custom",
+                    "scope": "visitor",
+                    "winning_direction": "increasing"
+                }
+            ],
+            "variations": {
+                "off": {
+                    "key": "off",
+                    "name": "Off",
+                    "percentage_included": 3333
+                },
+                "on_show_amounts": {
+                    "key": "on_show_amounts",
+                    "name": "On Show Amounts",
+                    "percentage_included": 3333
+                },
+                "on_show_amounts_red": {
+                    "key": "on_show_amounts_red",
+                    "name": "On Show Amounts Red",
+                    "percentage_included": 3334
+                }
+            },
+            "audience_conditions": []
+        }
+    },
+    {
+        "op": "replace",
+        "path": "/rule_priorities/0",
+        "value": "stock_message_test"
+    },
+    {
+        "op": "add",
+        "path": "/rule_priorities/1",
+        "value": "td"
+    }
+]
+
