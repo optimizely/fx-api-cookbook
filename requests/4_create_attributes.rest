@@ -8,59 +8,65 @@ Authorization: {{token}}
 
 {
   "key": "is_logged_in",
-  "project_id": 26592390574
+  "project_id": {{projectId}} // Do not wrap in quotes, must be integer value. VS Code may highlight this as an error, but it is not.
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "days_since_last_order",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "region_state",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "is_mobile_user",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "is_mobile_app",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "is_qa",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 
 POST {{baseUrl}}/attributes
 Content-Type: application/json
 Authorization: {{token}}
+
 {
   "key": "qa_team",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }

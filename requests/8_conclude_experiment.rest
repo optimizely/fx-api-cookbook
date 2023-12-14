@@ -2,7 +2,7 @@
 #                             Conclude experiment.                             #
 # ---------------------------------------------------------------------------- # 
 
-PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/production/ruleset
+PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/{{environment}}/ruleset
 Content-Type: application/json
 Authorization: {{token}}
 

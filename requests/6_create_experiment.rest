@@ -10,8 +10,7 @@
 // Distribution Mode: manual
 // Variations: off (33%), On Show Amounts (33%), On Show Amounts Red (33%)
 
-//TODO: Fix url
-PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/production/ruleset
+PATCH {{flagsUrl}}/projects/{{projectId}}/flags/{{flagKey}}/environments/{{environment}}/ruleset
 Content-Type: application/json
 Authorization: {{token}}
 
@@ -29,7 +28,7 @@ Authorization: {{token}}
                 {
                     "aggregator": "unique",
                     "display_title": "add_to_cart",
-                    "event_id": 25259131694,
+                    "event_id": 26574151708,
                     "event_type": "custom",
                     "scope": "visitor",
                     "winning_direction": "increasing"
@@ -56,14 +55,9 @@ Authorization: {{token}}
         }
     },
     {
-        "op": "replace",
+        "op": "add",
         "path": "/rule_priorities/0",
         "value": "stock_message_test"
-    },
-    {
-        "op": "add",
-        "path": "/rule_priorities/1",
-        "value": "td"
     }
 ]
 

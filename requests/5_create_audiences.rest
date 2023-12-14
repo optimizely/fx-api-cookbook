@@ -5,12 +5,14 @@
 POST {{baseUrl}}/audiences
 Content-Type: application/json
 Authorization: {{token}}
+// Do not wrap {{projectId}} in quotes, must be integer value. VS Code may highlight this as an error, but it is not.
 
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"is_logged_in\",\"value\":false,\"match_type\":\"exact\",\"type\":\"custom_attribute\"}]]]",
   "name": "Anonymous Users",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
+
 ###
 POST {{baseUrl}}/audiences
 Content-Type: application/json
@@ -19,7 +21,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"is_logged_in\",\"value\":true,\"match_type\":\"exact\",\"type\":\"custom_attribute\"}]]]",
   "name": "Authenticated Users",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -29,7 +31,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"days_since_last_order\",\"type\":\"custom_attribute\",\"match_type\":\"le\",\"value\":14}]]]",
   "name": "Recent Purchasers",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -39,7 +41,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"region_state\",\"type\":\"custom_attribute\",\"value\":\"CA\"}]]]",
   "name": "California Visitors",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -49,7 +51,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"is_mobile_user\",\"value\":true,\"match_type\":\"exact\",\"type\":\"custom_attribute\"}]]]",
   "name": "Mobile Web Users",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -59,7 +61,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\",{\"name\":\"is_mobile_app\",\"value\":true,\"match_type\":\"exact\",\"type\":\"custom_attribute\"}]]]",
   "name": "Mobile App Users",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -69,7 +71,7 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\", {\"value\": true,\"type\": \"custom_attribute\",\"name\": \"is_qa\"}]],[\"or\",[\"or\",{\"name\":\"qa_team\",\"type\":\"custom_attribute\",\"value\":\"1\"}]]]",
   "name": "QA Team 1",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }
 ###
 POST {{baseUrl}}/audiences
@@ -79,5 +81,5 @@ Authorization: {{token}}
 {
   "conditions": "[\"and\",[\"or\",[\"or\", {\"value\": true,\"type\": \"custom_attribute\",\"name\": \"is_qa\"}]],[\"or\",[\"or\",{\"name\":\"qa_team\",\"type\":\"custom_attribute\",\"value\":\"2\"}]]]",
   "name": "QA Team 2",
-  "project_id": 26592390574
+  "project_id": {{projectId}}
 }

@@ -4,7 +4,7 @@
 
 // ----------- Get All Experiments in Project => Get Experiment Key ---------- //
 
-GET {{flagsUrl}}/projects/{{projectId}}/rules?rule_types=a/b,mab&archived=false&environments=production&per_page=100
+GET {{flagsUrl}}/projects/{{projectId}}/rules?rule_types=a/b,mab&archived=false&environments={{environment}}&per_page=100
 Content-Type: application/json
 Authorization: {{token}}
 
@@ -12,26 +12,31 @@ Authorization: {{token}}
 
 ###
 
-// ------------------------- Get Experiment Reports ------------------------- //
-GET {{flagsUrl}}/projects/{{projectId}}/environments/production/reports?sort=key:asc&archived=false
+// ------------------------- Get Experiment Reports => Get Report Key ------------------------- //
+GET {{flagsUrl}}/projects/{{projectId}}/environments/{{environment}}/reports?sort=key:asc&archived=false
 Content-Type: application/json
 Authorization: {{token}}
 
-// Grab the relevant report key for the experiment of interest (e.g., stock_message_test_W9PHyDfYDiGdoqwuU9ANR4)
+// Grab the relevant report key for the experiment of interest (e.g., stock_message_test_ff8g3hxNc8EKoE837vVVtR)
 
 ###
 
-// -------------------- Get Individual Experiment Report -------------------- //
-GET {{flagsUrl}}/projects/{{projectId}}/environments/production/reports/{yourReportKey}
+// -------------------- Get Individual Experiment Report => Get Experiment Results ID -------------------- //
+
+// Replace {{reportKey}} with the report key from the previous response.
+
+GET {{flagsUrl}}/projects/{{projectId}}/environments/{{environment}}/reports/{{reportKey}}
 Content-Type: application/json
 Authorization: {{token}}
 
-// Grab the relevant experiment results ID from the end of the fetch_results_ui_url key in the response
+// Grab the relevant experiment results ID from the end of the fetch_results_ui_url key in the response (/experiments/{{experimentResultsId}})
+
+###
 
 // ------------------------- Get Experiment Results ------------------------- //
 
-// Add the experiment results from the previous response ID to the URL below.
+// Replace {{experimentResultsId}} with the experiment results ID from the previous response.
 
-GET {{baseUrl}}/experiments/{yourExperimentResultsId}/results
+GET {{baseUrl}}/experiments/{{experimentResultsId}}/results
 Content-Type: application/json
 Authorization: {{token}}
