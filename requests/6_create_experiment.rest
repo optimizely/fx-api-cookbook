@@ -28,7 +28,7 @@ Authorization: {{token}}
                 {
                     "aggregator": "unique",
                     "display_title": "add_to_cart",
-                    "event_id": 26574151708,
+                    "event_id": {{eventId}},
                     "event_type": "custom",
                     "scope": "visitor",
                     "winning_direction": "increasing"
