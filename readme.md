@@ -132,7 +132,7 @@ Run the API request in the file **1_create_flag.rest**. You should see a respons
       "enabled": false,
       "priority": 2,
       "rules_summary": {},
-      "enable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset/enabled"
+      "enable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset/enabled"
     }
   },
   "id": 122050,
@@ -282,9 +282,9 @@ We hope you already stored the id of the event; make sure you add them to the en
 Now we will execute the **6_create_experiment.rest**. You should see a response like this:
 ````json
 {
-  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "enable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset/enabled",
+  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "enable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset/enabled",
   "rules": {
     "stock_message_test": {
       "key": "stock_message_test",
@@ -360,9 +360,9 @@ Now we will launch the experiment we just created. Execute the endpoints in **7_
 Sample response:
 ```json
 {
-  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "disable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset/disabled",
+  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "disable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset/disabled",
   "rules": {
     "stock_message_test": {
       "key": "stock_message_test",
@@ -437,9 +437,9 @@ You can also disable an experiment. To do this, run **8_conclude_experiment.rest
 Sample response:
 ```json
 {
-  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset",
-  "disable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/development/ruleset/disabled",
+  "url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "update_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset",
+  "disable_url": "/projects/{{your_project_id}}/flags/inventory_on_pdp/environments/{{your_environment}}/ruleset/disabled",
   "rules": {
     "stock_message_test": {
       "key": "stock_message_test",
